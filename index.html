@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Larasati Romadhani Yunita Putri · Data Analyst</title>
+<meta name="description" content="Data Analyst with a Data Science degree. Dashboards, clustering, recommendation systems and published research.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff7f9;--pink:#fbdce5;--pink2:#f4bfd0;--rose:#c2456b;--rose2:#a23757;--ink:#3b2230;--muted:#7a6270;--line:#f1d6df;--card:#fff;--r:20px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.15;color:var(--ink)}
+a{color:var(--rose2)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:max-content;max-width:calc(100% - 24px);background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:99px;padding:6px 8px;display:flex;gap:2px;overflow-x:auto;box-shadow:0 6px 24px rgba(194,69,107,.1)}
+nav a{padding:7px 15px;border-radius:99px;text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:500;white-space:nowrap}
+nav a:hover{background:var(--pink);color:var(--ink)}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:var(--rose2);font-weight:600;font-size:14px;padding:5px 14px;border-radius:99px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--rose)}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4rem);margin:18px 0 14px}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:44ch;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 24px;border-radius:99px;border:1.5px solid var(--rose);color:var(--rose2);text-decoration:none;font-weight:600;background:transparent}
+.btn.main{background:var(--rose);color:#fff}
+.btn.main:hover{background:var(--rose2)}
+.btn:not(.main):hover{background:var(--pink)}
+.me{position:relative;background:linear-gradient(160deg,var(--pink),var(--pink2));border-radius:32px;padding:34px 28px;text-align:center}
+.me .av{width:132px;height:132px;border-radius:50%;margin:0 auto 16px;background:#fff;display:grid;place-items:center;font:700 2.6rem Fraunces,Georgia,serif;color:var(--rose);border:6px solid rgba(255,255,255,.7);overflow:hidden}
+.me .av img{width:100%;height:100%;object-fit:cover}
+.me b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.2rem}
+.me small{color:var(--rose2);font-weight:500}
+.me .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:18px}
+.me .chips span{background:rgba(255,255,255,.75);border-radius:99px;padding:2px 11px;font-size:13px;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;font-size:14px;color:var(--muted)}
+.stats b{display:block;font:700 1.75rem Fraunces,Georgia,serif;color:var(--rose)}
+section{padding:68px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.head h2{font-size:2.2rem}
+.head p{margin:6px 0 0;color:var(--muted)}
+.band{background:var(--pink);background:linear-gradient(180deg,#fdebf1,#fff7f9)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.about p{margin:0 0 14px;max-width:58ch}
+.sk{display:grid;gap:14px}
+.sk div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 20px}
+.sk h3{font-size:1rem;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{background:var(--pink);color:var(--ink);border-radius:99px;padding:2px 12px;font-size:13.5px;font-weight:500}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{font:inherit;font-size:14.5px;font-weight:500;padding:7px 16px;border-radius:99px;border:1px solid var(--pink2);background:#fff;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--rose);border-color:var(--rose);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{font:inherit;text-align:left;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:0;cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(194,69,107,.16)}
+.card[hidden]{display:none}
+.card svg{display:block;width:100%;height:150px;background:linear-gradient(160deg,#fde8ef,#f8cfdc);color:var(--rose)}
+.card .b{padding:16px 18px 20px}
+.card h3{font-size:1.08rem;margin:8px 0 6px}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+.card .k{font-size:12.5px;font-weight:600;color:var(--rose2);background:var(--pink);padding:2px 10px;border-radius:99px}
+.pubs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pub{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column}
+.pub .k{align-self:flex-start;font-size:12.5px;font-weight:600;background:var(--rose);color:#fff;padding:2px 11px;border-radius:99px}
+.pub h3{font-size:1.08rem;margin:14px 0 8px}
+.pub p{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+.pub a{margin-top:auto;font-weight:600}
+.xp{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.xp article{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--pink2);border-radius:var(--r);padding:20px 24px}
+.xp time{font-size:13.5px;font-weight:600;color:var(--rose2)}
+.xp h3{font-size:1.1rem;margin:4px 0 6px}
+.xp p{margin:0;font-size:14.5px;color:var(--muted)}
+.contact{background:linear-gradient(135deg,var(--pink),var(--pink2));border-radius:36px;padding:56px 32px;text-align:center}
+.contact h2{font-size:2.2rem;margin-bottom:10px}
+.contact p{margin:0 auto;max-width:48ch}
+.contact .cta{justify-content:center}
+footer{text-align:center;padding:32px 0 48px;color:var(--muted);font-size:14px}
+dialog{border:0;border-radius:28px;padding:0;max-width:560px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 30px 80px rgba(59,34,48,.3)}
+dialog::backdrop{background:rgba(59,34,48,.45)}
+dialog svg{display:block;width:100%;height:170px;background:linear-gradient(160deg,#fde8ef,#f8cfdc);color:var(--rose)}
+dialog .in{padding:24px 28px 30px}
+dialog h3{font-size:1.4rem;margin-bottom:12px}
+dialog h4{margin:16px 0 4px;font-size:.95rem;color:var(--rose2)}
+dialog p{margin:0}
+dialog .x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:20px;cursor:pointer;color:var(--ink)}
+@media (max-width:900px){.hero,.about{grid-template-columns:1fr}.grid,.pubs{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.grid,.pubs,.xp{grid-template-columns:1fr}section{padding:48px 0}.me{order:-1}.hero{padding-top:36px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Main"><a href="#top">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+
+<main id="top">
+<div class="wrap">
+<div class="hero">
+<div>
+<span class="badge"><i></i>Open to work</span>
+<h1>Larasati Romadhani Yunita Putri</h1>
+<p class="lead">Data Analyst who turns messy business data into dashboards, models and decisions people actually use.</p>
+<div class="cta">
+<a class="btn main" href="#projects">See my projects</a>
+<a class="btn" href="#" id="cv">View CV</a><!-- TODO: put your CV link here -->
+<a class="btn" href="#" id="linkedin">LinkedIn</a><!-- TODO: put your LinkedIn URL here -->
+</div>
+</div>
+<div class="me">
+<div class="av"><!-- TODO: replace LR with <img src="photo.jpg" alt="Larasati"> -->LR</div>
+<b>Data Analyst</b><small>Heaven Scent</small>
+<div class="chips"><span>Python</span><span>SQL</span><span>Looker Studio</span><span>Streamlit</span><span>BigQuery</span></div>
+</div>
+</div>
+<div class="stats">
+<div><b>3</b>publications, Scopus and Sinta indexed</div>
+<div><b>15 min</b>sync of the live sales dashboard</div>
+<div><b>36,164</b>transactions mined for menu bundling</div>
+<div><b>3.84</b>GPA, B.Sc. Data Science</div>
+</div>
+</div>
+
+<section id="about" class="band"><div class="wrap">
+<div class="about">
+<div>
+<h2 style="margin-bottom:18px">About me</h2>
+<p>I’m a Data Analyst at Heaven Scent with a Bachelor’s degree in Data Science from UPN “Veteran” Jawa Timur (GPA 3.84/4.00).</p>
+<p>I work on data analysis, KPI monitoring, dashboard development and process automation, and I like turning data into insights a business owner can act on.</p>
+<p>I’m open to Data Analyst, Data Scientist and Business Analyst roles.</p>
+</div>
+<div class="sk">
+<div><h3>Analysis and BI</h3><div class="tags"><span>Excel</span><span>Google Sheets</span><span>Looker Studio</span><span>Power BI</span><span>Statistics</span></div></div>
+<div><h3>Programming and ML</h3><div class="tags"><span>Python</span><span>SQL</span><span>BigQuery ML</span><span>TensorFlow</span><span>Streamlit</span></div></div>
+<div><h3>Automation</h3><div class="tags"><span>Apps Script</span><span>Cloud Run</span><span>ETL</span></div></div>
+</div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head"><div><h2>Projects</h2><p>Select a project to see the problem, tools and result.</p></div>
+<div class="filters" role="group" aria-label="Filter projects">
+<button aria-pressed="true" data-f="all">All</button><button aria-pressed="false" data-f="dashboard">Dashboards</button><button aria-pressed="false" data-f="ml">Machine learning</button><button aria-pressed="false" data-f="automation">Automation</button>
+</div></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="publications" class="band"><div class="wrap">
+<div class="head"><div><h2>Publications</h2><p>Research from my data science work.</p></div></div>
+<div class="pubs">
+<article class="pub"><span class="k">JAIC 2026 · Sinta 3</span><h3>Menu bundling optimization using association rule mining</h3><p>FP-Growth with a Genetic Algorithm on 36,164 transactions cut redundant rules from 6.06% to 0% and memory use by 65.1% versus Apriori.</p><a href="#">Read the paper</a></article>
+<article class="pub"><span class="k">ICIMCIS 2025 · Scopus</span><h3>Content-based menu recommendation for Depot Mie Gemes</h3><p>BERT embeddings with cosine similarity reached Precision@10 of 0.66 and Hit Rate@10 of 1.0.</p><a href="#">Read the paper</a></article>
+<article class="pub"><span class="k">Tambusai 2024 · Sinta 6</span><h3>“Gadget” and “gawai” in the 4.0 to 5.0 era with NLP</h3><p>A Naive Bayes classifier reached 94% accuracy while tracking how both terms are used from 2017 to 2020.</p><a href="#">Read the paper</a></article>
+</div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<div class="head"><div><h2>Experience and education</h2></div></div>
+<div class="xp">
+<article><time>Jul 2026 to now</time><h3>Data Analyst, CV Heaven Scent</h3><p>Contract role focused on analysis, KPI monitoring and dashboards.</p></article>
+<article><time>Feb to Jun 2025</time><h3>Data Analyst Intern, PT Ultra Prima Abadi</h3><p>Built a production dashboard, a customer segmentation and an automation system for three divisions.</p></article>
+<article><time>Sep to Dec 2024</time><h3>Bangkit Academy 2024, ML cohort</h3><p>22 courses completed. Capstone face verification model with a Siamese Neural Network reached 98% accuracy.</p></article>
+<article><time>2022 to 2026</time><h3>B.Sc. Data Science, UPN “Veteran” Jawa Timur</h3><p>GPA 3.84/4.00. Led events as Head of Event for KKNT SDGs Group 107 and MOSAIK 2024 (400+ participants).</p></article>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="contact">
+<h2>Let’s work together</h2>
+<p>Have a role or a data problem in mind? Send me a message and I’ll get back to you.</p>
+<div class="cta"><a class="btn main" href="mailto:larasatiramadhani10@gmail.com">larasatiramadhani10@gmail.com</a></div>
+</div>
+</div></section>
+</main>
+<footer>© 2026 Larasati Romadhani Yunita Putri</footer>
+
+<dialog id="dlg" aria-labelledby="dt"><button class="x" aria-label="Close">×</button><div id="dsvg"></div><div class="in"><h3 id="dt"></h3><div class="tags" id="dtools"></div><h4>Problem</h4><p id="dp"></p><h4>Result</h4><p id="dr"></p></div></dialog>
+
+<script>
+var P=[
+{t:"Near real-time sales dashboard",k:"Mie Gemes",c:"dashboard automation",v:"line",tools:["Cloud Run","Google Sheets","Looker Studio"],p:"The owner couldn’t monitor three business units at once because POS data was only visible at the cashier.",r:"A live dashboard syncs POS data every 15 minutes across Mie Gemes, Steak Ayam and Es Teler, with zero manual input."},
+{t:"Product clustering and sales analytics",k:"Mie Gemes",c:"dashboard ml",v:"dots",tools:["BigQuery","BigQuery ML","K-Means","Looker Studio"],p:"Sales data existed but was never analyzed, so the owner couldn’t tell which products drive revenue.",r:"An ETL pipeline plus K-Means grouped products into slow, mid and fast moving. Mid-moving products are the top revenue contributors."},
+{t:"Production analytics dashboard",k:"Ultra Prima Abadi",c:"dashboard",v:"bars",tools:["Python","Streamlit","Pandas","Plotly"],p:"Hard to monitor production performance and spot defect trends across lines.",r:"An interactive dashboard that pinpointed key defect contributors, including T07/08 (over 60% defects) and T17/18 (41.7%)."},
+{t:"Customer segmentation",k:"Mintz products",c:"ml",v:"dots",tools:["Python","Pandas","K-Modes"],p:"Limited understanding of who buys Mintz products made targeted marketing difficult.",r:"Two main segments found: younger consumers (17 to 25) and adults (26+), giving a base for targeted campaigns."},
+{t:"Data management and automation system",k:"Ultra Prima Abadi",c:"automation",v:"flow",tools:["Google Sheets","Apps Script","Streamlit","Google Sites"],p:"Manual data handling across the Production, Ballmill and Flavour divisions caused inconsistent records.",r:"Automated data entry and one structured, centralized access point through Google Sites."},
+{t:"Coffee sales dashboard",k:"Excel",c:"dashboard",v:"bars",tools:["PivotTable","PivotChart","XLOOKUP","Slicers"],p:"Scattered coffee shop data made it hard to see which markets, products and loyalty programs perform.",r:"Revenue $45,134 and profit $4,520 (about 10% margin), with 79% of revenue from the US. Loyalty members spent less per transaction than non-members."}
+];
+function art(v){var s='<svg viewBox="0 0 300 150" role="img" aria-label="Illustration" fill="currentColor" stroke="currentColor">',i;
+if(v==="bars"){[50,85,65,110,90,125].forEach(function(h,i){s+='<rect x="'+(34+i*42)+'" y="'+(135-h)+'" width="26" height="'+h+'" rx="6" opacity="'+(.45+i*.1)+'" stroke="none"/>'})}
+else if(v==="line"){s+='<polyline points="20,110 70,85 115,95 165,55 215,65 280,25" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>';[[20,110],[115,95],[165,55],[280,25]].forEach(function(p){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="7" stroke="none"/>'})}
+else if(v==="dots"){[[60,50,.9],[85,70,.9],[70,90,.9],[150,95,.55],[170,75,.55],[135,70,.55],[230,45,.3],[250,65,.3],[215,60,.3]].forEach(function(p){s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="13" opacity="'+p[2]+'" stroke="none"/>'})}
+else{[[25,"Sheets"],[115,"Script"],[205,"Site"]].forEach(function(b,i){s+='<rect x="'+b[0]+'" y="52" width="70" height="46" rx="12" opacity=".85" stroke="none"/>';if(i<2)s+='<path d="M'+(b[0]+76)+' 75h14m-6-6l6 6-6 6" fill="none" stroke-width="4" stroke-linecap="round"/>'})}
+return s+'</svg>'}
+var g=document.getElementById("grid"),d=document.getElementById("dlg");
+P.forEach(function(x,n){var b=document.createElement("button");b.className="card";b.dataset.c=x.c;
+b.innerHTML=art(x.v)+'<div class="b"><span class="k"></span><h3></h3><p></p></div>';
+b.querySelector(".k").textContent=x.k;b.querySelector("h3").textContent=x.t;b.querySelector("p").textContent=x.p;
+b.addEventListener("click",function(){document.getElementById("dsvg").innerHTML=art(x.v);document.getElementById("dt").textContent=x.t;
+document.getElementById("dp").textContent=x.p;document.getElementById("dr").textContent=x.r;
+var t=document.getElementById("dtools");t.innerHTML="";x.tools.forEach(function(s){var e=document.createElement("span");e.textContent=s;t.appendChild(e)});d.showModal()});
+g.appendChild(b)});
+d.querySelector(".x").onclick=function(){d.close()};
+d.addEventListener("click",function(e){if(e.target===d)d.close()});
+document.querySelectorAll(".filters button").forEach(function(b){b.addEventListener("click",function(){
+document.querySelectorAll(".filters button").forEach(function(o){o.setAttribute("aria-pressed",o===b)});
+var f=b.dataset.f;document.querySelectorAll(".card").forEach(function(c){c.hidden=!(f==="all"||c.dataset.c.split(" ").indexOf(f)>-1)})})});
+</script>
+</body>
+</html>
