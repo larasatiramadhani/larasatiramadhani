@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#fff7f9;--pink:#fbdce5;--pink2:#f4bfd0;--rose:#c2456b;--rose2:#a23757;--ink:#3b2230;--muted:#7a6270;--line:#f1d6df;--card:#fff;--r:20px}
+:root{color-scheme:light;--bg:#fffcfb;--pink:#fdebed;--pink2:#f8d0d6;--rose:#c84a63;--rose2:#a93a52;--ink:#2b2527;--muted:#6c6266;--line:#f3dfe2;--card:#fff;--r:20px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
@@ -16,7 +16,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.15;color:var(
 a{color:var(--rose2)}
 :focus-visible{outline:3px solid var(--rose);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:max-content;max-width:calc(100% - 24px);background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:99px;padding:6px 8px;display:flex;gap:2px;overflow-x:auto;box-shadow:0 6px 24px rgba(194,69,107,.1)}
+nav{position:sticky;top:12px;z-index:10;margin:12px auto 0;width:max-content;max-width:calc(100% - 24px);background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:99px;padding:6px 8px;display:flex;gap:2px;overflow-x:auto;box-shadow:0 6px 24px rgba(60,40,45,.08)}
 nav a{padding:7px 15px;border-radius:99px;text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:500;white-space:nowrap}
 nav a:hover{background:var(--pink);color:var(--ink)}
 .hero{padding:56px 0 40px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
@@ -29,7 +29,7 @@ nav a:hover{background:var(--pink);color:var(--ink)}
 .btn.main{background:var(--rose);color:#fff}
 .btn.main:hover{background:var(--rose2)}
 .btn:not(.main):hover{background:var(--pink)}
-.me{position:relative;background:linear-gradient(160deg,var(--pink),var(--pink2));border-radius:32px;padding:34px 28px;text-align:center}
+.me{position:relative;background:linear-gradient(160deg,#fef3f4,#fbdfe3);border-radius:32px;padding:34px 28px;text-align:center}
 .me .av{width:132px;height:132px;border-radius:50%;margin:0 auto 16px;background:#fff;display:grid;place-items:center;font:700 2.6rem Fraunces,Georgia,serif;color:var(--rose);border:6px solid rgba(255,255,255,.7);overflow:hidden}
 .me .av img{width:100%;height:100%;object-fit:cover}
 .me b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.2rem}
@@ -43,7 +43,7 @@ section{padding:68px 0}
 .head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
 .head h2{font-size:2.2rem}
 .head p{margin:6px 0 0;color:var(--muted)}
-.band{background:var(--pink);background:linear-gradient(180deg,#fdebf1,#fff7f9)}
+.band{background:var(--pink);background:linear-gradient(180deg,#faf6f5,#fffcfb)}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:36px}
 .about p{margin:0 0 14px;max-width:58ch}
 .sk{display:grid;gap:14px}
@@ -56,9 +56,9 @@ section{padding:68px 0}
 .filters button[aria-pressed="true"]{background:var(--rose);border-color:var(--rose);color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{font:inherit;text-align:left;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:0;cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(194,69,107,.16)}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(60,40,45,.12)}
 .card[hidden]{display:none}
-.card svg{display:block;width:100%;height:150px;background:linear-gradient(160deg,#fde8ef,#f8cfdc);color:var(--rose)}
+.card svg{display:block;width:100%;height:150px;background:linear-gradient(160deg,#fdf1f3,#f9dce0);color:var(--rose)}
 .card .b{padding:16px 18px 20px}
 .card h3{font-size:1.08rem;margin:8px 0 6px}
 .card p{margin:0;font-size:14.5px;color:var(--muted)}
@@ -74,14 +74,14 @@ section{padding:68px 0}
 .xp time{font-size:13.5px;font-weight:600;color:var(--rose2)}
 .xp h3{font-size:1.1rem;margin:4px 0 6px}
 .xp p{margin:0;font-size:14.5px;color:var(--muted)}
-.contact{background:linear-gradient(135deg,var(--pink),var(--pink2));border-radius:36px;padding:56px 32px;text-align:center}
+.contact{background:linear-gradient(135deg,#fef3f4,#fbdfe3);border-radius:36px;padding:56px 32px;text-align:center}
 .contact h2{font-size:2.2rem;margin-bottom:10px}
 .contact p{margin:0 auto;max-width:48ch}
 .contact .cta{justify-content:center}
 footer{text-align:center;padding:32px 0 48px;color:var(--muted);font-size:14px}
-dialog{border:0;border-radius:28px;padding:0;max-width:560px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 30px 80px rgba(59,34,48,.3)}
-dialog::backdrop{background:rgba(59,34,48,.45)}
-dialog svg{display:block;width:100%;height:170px;background:linear-gradient(160deg,#fde8ef,#f8cfdc);color:var(--rose)}
+dialog{border:0;border-radius:28px;padding:0;max-width:560px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 30px 80px rgba(40,32,35,.3)}
+dialog::backdrop{background:rgba(40,32,35,.45)}
+dialog svg{display:block;width:100%;height:170px;background:linear-gradient(160deg,#fdf1f3,#f9dce0);color:var(--rose)}
 dialog .in{padding:24px 28px 30px}
 dialog h3{font-size:1.4rem;margin-bottom:12px}
 dialog h4{margin:16px 0 4px;font-size:.95rem;color:var(--rose2)}
